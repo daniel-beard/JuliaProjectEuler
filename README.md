@@ -5,3 +5,4 @@ Problems from ProjectEuler solved using Julia
 
 - Problem 1 ✓
 - Problem 2 ✓
+- Problem 3 ✓
