@@ -10,3 +10,4 @@ Problems from ProjectEuler solved using Julia
 - Problem 5 ✓
 - Problem 6 ✓
 - Problem 7 ✓
+- Problem 8 ✓
