@@ -9,3 +9,4 @@ Problems from ProjectEuler solved using Julia
 - Problem 4 ✓
 - Problem 5 ✓
 - Problem 6 ✓
+- Problem 7 ✓
