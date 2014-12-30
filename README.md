@@ -7,3 +7,4 @@ Problems from ProjectEuler solved using Julia
 - Problem 2 ✓
 - Problem 3 ✓
 - Problem 4 ✓
+- Problem 5 ✓
