@@ -8,3 +8,4 @@ Problems from ProjectEuler solved using Julia
 - Problem 3 ✓
 - Problem 4 ✓
 - Problem 5 ✓
+- Problem 6 ✓
