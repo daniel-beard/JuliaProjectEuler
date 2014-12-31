@@ -15,3 +15,4 @@ Problems from ProjectEuler solved using Julia
 - Problem 10 ✓
 - Problem 11 ✓
 - Problem 12 ✓
+- Problem 13 ✓
