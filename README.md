@@ -18,3 +18,4 @@ Problems from ProjectEuler solved using Julia
 - Problem 13 ✓
 - Problem 14 ✓
 - Problem 15 ✓
+- Problem 16 ✓
