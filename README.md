@@ -24,3 +24,4 @@ Problems from ProjectEuler solved using Julia
 - Problem 19 ✓
 - Problem 20 ✓
 - Problem 21 ✓
+- Problem 22 ✓
