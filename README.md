@@ -22,3 +22,4 @@ Problems from ProjectEuler solved using Julia
 - Problem 17 ✓
 - Problem 18 ✓
 - Problem 19 ✓
+- Problem 20 ✓
