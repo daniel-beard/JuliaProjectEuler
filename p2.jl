@@ -24,7 +24,7 @@ function calculate()
       total += i
     end
   end
-  println(sum)
+  println(total)
 end
 time = @elapsed calculate()
 println("Took: $(time) seconds")
