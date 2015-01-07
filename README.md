@@ -3,4 +3,4 @@ JuliaProjectEuler
 
 Problems from ProjectEuler solved using Julia
 
-- Problem 1-32  ✓
+- Problem 1-33  ✓
