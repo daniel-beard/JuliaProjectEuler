@@ -5,14 +5,7 @@ Find the sum of the only eleven primes that are both truncatable from left to ri
 
 NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
 =#
-function nd(a) # Reconstruct a digit from an array
-  multiplicand,result = 1,0
-  for i in reverse(1:length(a))
-    result += multiplicand * a[i]
-    multiplicand *= 10
-  end
-  result
-end
+include("projecteulerutils.jl")
 
 function istruncatableprime(a)
   da = reverse(digits(a))

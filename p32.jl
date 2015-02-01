@@ -7,17 +7,7 @@ Find the sum of all products whose multiplicand/multiplier/product identity can 
 
 HINT: Some products can be obtained in more than one way so be sure to only include it once in your sum.
 =#
-function nd(a) # Reconstruct a digit from an array
-  multiplicand = 1
-  result = 0
-  for i in reverse(1:length(a))
-    digit = a[i]
-    result += multiplicand * digit
-    multiplicand *= 10
-  end
-  result
-end
-
+include("projecteulerutils.jl")
 function calc()
   matches = Int64[]
   for c in permutations([1:9])

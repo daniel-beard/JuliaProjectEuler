@@ -12,14 +12,7 @@ d7d8d9=728 is divisible by 13
 d8d9d10=289 is divisible by 17
 Find the sum of all 0 to 9 pandigital numbers with this property.
 =#
-function nd(a) # Reconstruct a digit from an array
-  multiplicand,result = 1,0
-  for i in reverse(1:length(a))
-    result += multiplicand * a[i]
-    multiplicand *= 10
-  end
-  result
-end
+include("projecteulerutils.jl")
 
 function calc()
   sum = 0

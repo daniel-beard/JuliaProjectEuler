@@ -3,14 +3,7 @@ We shall say that an n-digit number is pandigital if it makes use of all the dig
 
 What is the largest n-digit pandigital prime that exists?
 =#
-function nd(a) # Reconstruct a digit from an array
-  multiplicand,result = 1,0
-  for i in reverse(1:length(a))
-    result += multiplicand * a[i]
-    multiplicand *= 10
-  end
-  result
-end
+include("projecteulerutils.jl")
 
 function calc()
   largestpandigitalprime = 1

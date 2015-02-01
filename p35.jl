@@ -5,16 +5,7 @@ There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73
 
 How many circular primes are there below one million?
 =#
-function nd(a) # Reconstruct a digit from an array
-  multiplicand = 1
-  result = 0
-  for i in reverse(1:length(a))
-    digit = a[i]
-    result += multiplicand * digit
-    multiplicand *= 10
-  end
-  result
-end
+include("projecteulerutils.jl")
 
 function iscircularprime(x)
   i = reverse(digits(x))
