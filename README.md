@@ -9,4 +9,4 @@ Problems from ProjectEuler solved using Julia
 - [X] Problem 53
 - [ ] Problem 54
 - [X] Problem 55
-= [X] Problem 56
+- [X] Problem 56
