@@ -55,7 +55,7 @@ function walk(x, i, j, vector, adjacents)
 end
 
 function product_adjacent_numbers()
-  x = readdlm(dirname(@__FILE__()) * "/Resources/p11.txt", ' ', Int64) # Load matrix from file
+  x = readdlm(dirname(@__FILE__()) * "/../Resources/p11.txt", ' ', Int64) # Load matrix from file
   adjacents = 4
   maxproduct = 1
   for i in 1:size(x,1)
