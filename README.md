@@ -8,8 +8,7 @@ Problems from ProjectEuler solved using Julia
 - [X] Problem 52
 - [X] Problem 53
 - [ ] Problem 54
-- [X] Problem 55
-- [X] Problem 56
-- [X] Problem 57
-- [X] Problem 58
-- [X] Problem 59
+- Problem 55-59  ✓
+
+...
+- [X] Problem 92
