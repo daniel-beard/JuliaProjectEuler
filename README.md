@@ -17,3 +17,4 @@ Problems from ProjectEuler solved using Julia
 - [X] Problem 79
 - [X] Problem 92
 - [X] Problem 97
+- [X] Problem 206
