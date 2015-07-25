@@ -23,8 +23,10 @@ end
 
 function calc()
   x = readdlm(dirname(@__FILE__()) * "/../Resources/p102.txt", ',', Int64)
-  println(x)
-  pointInTriangle(0,0,-340,495,-153,-910,835,-947)
-  pointInTriangle(0,0,-175,41,-421,-714,574,-645)
+  count = 0
+  for i in [1:1000]
+    count = pointInTriangle(0, 0, x[i,1], x[i, 2], x[i, 3], x[i, 4], x[i, 5], x[i, 6]) ? count + 1 : count
+  end
+  count
 end
 @time println(calc())
