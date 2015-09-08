@@ -136,17 +136,6 @@ function <(x::PokerHand, y::PokerHand)
   elseif rank1 != rank2
     return false
   end
-  if rank == 9 || rank == 5 # Handle straights
-    return last(sort(collect(keys(x.cards)))) < last(sort(collect(keys(y.cards))))
-  end
-  if rank == 10 || rank == 6   # Handle flushes
-    reverseXSort = reverse(sort(collect(keys(x.cards))))
-    reverseYSort = reverse(sort(collect(keys(y.cards))))
-    for i in zip(reverseXSort, reverseYSort)
-      if i[1] < i[2] return true end
-      if i[1] > i[2] return false end
-    end
-  end
   xRanks, yRanks = histogram(x)[2], histogram(y)[2]
   for i in zip(xRanks, yRanks)
     if i[1] < i[2] return true end
