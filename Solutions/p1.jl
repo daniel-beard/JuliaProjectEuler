@@ -12,5 +12,5 @@ function multiples(below)
   end
   sum
 end
-println(multiples(1000))
+@time println(multiples(1000))
 
