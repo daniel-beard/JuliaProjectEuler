@@ -38,7 +38,7 @@ end
 
 function calc()
   count = 0
-  for i in [69:999_999]
+  for i in 69:999_999
     if lengthOfLoop(i) == 60
       count = count + 1
     end

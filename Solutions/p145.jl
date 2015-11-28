@@ -28,7 +28,7 @@ end
 
 function calc()
   count = 0
-  for i in [1:10^8]
+  for i in collect(1:10^8)
     count = count + isReversibleNum(i)
   end
   count

@@ -10,12 +10,12 @@ Find the next triangle number that is also pentagonal and hexagonal.
 =#
 function ispentagonalnum(x)
   n = (sqrt(24x+1)+1)/6
-  return n == int(n) && n > 0
+  return n == round(Int, n) && n > 0
 end
 
 function ishexagonalnum(x)
   n = (sqrt(8x+1) + 1) / 4
-  return n == int(n) && n > 0
+  return n == round(Int,n) && n > 0
 end
 
 function calc()

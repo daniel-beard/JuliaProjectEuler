@@ -10,7 +10,7 @@ function calc()
       continue
     end
     if ismatch(r"1\d2\d3\d4\d5\d6\d7\d8\d9\d0", "$s")
-      return int64(sqrt(s))
+      return round(Int64, sqrt(s))
     end
   end
 end

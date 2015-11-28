@@ -13,7 +13,7 @@ end
 
 function ispent(x)
   n = (sqrt(24x+1)+1)/6
-  return n == int(n) && n > 0
+  return n == round(Int,n) && n > 0
 end
 
 function calc()

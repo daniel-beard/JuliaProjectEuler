@@ -13,7 +13,7 @@ You are given the following information, but you may prefer to do some research 
 How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
 =#
 
-months = [
+months = Dict(
   1 => 31,
   2 => 28,
   3 => 31,
@@ -26,7 +26,7 @@ months = [
   10 => 31,
   11 => 30,
   12 => 31
-]
+)
 
 function isleapyear(year)
   if year%100==0

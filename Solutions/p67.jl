@@ -17,7 +17,7 @@ function readfile(file)
   f = open(file)
   lines = readlines(f)
   arr = Array[]
-  c(x) = push!(arr, int(split(strip(x), ',')))
+  c(x) = push!(arr, [parse(Int64, s) for s = split(strip(x), ',')])
   for line in lines
     c(line)
   end

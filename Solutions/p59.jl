@@ -10,7 +10,7 @@ Unfortunately, this method is impractical for most users, so the modified method
 Your task has been made easy, as the encryption key consists of three lower case characters. Using cipher.txt (right click and 'Save Link/Target As...'), a file containing the encrypted ASCII codes, and the knowledge that the plain text must contain common English words, decrypt the message and find the sum of the ASCII values in the original text.
 =#
 function check(cypher, key, commonwords)
-  y = Uint8[]
+  y = UInt8[]
   for i in 1:length(cypher)
     push!(y, cypher[i] $ key[mod(i,length(key))+1])
   end
@@ -23,14 +23,14 @@ function check(cypher, key, commonwords)
 end
 
 function calc()
-  x = vec(readdlm(dirname(@__FILE__()) * "/../Resources/p59.txt", ',', Uint8))
-  key = Uint8[]
+  x = vec(readdlm(dirname(@__FILE__()) * "/../Resources/p59.txt", ',', UInt8))
+  key = UInt8[]
   # https://en.wikipedia.org/wiki/Most_common_words_in_English
   commonwords = split("the|be|to|of|and|a|in|that|have|i|it|for|not|on|with|he|as|you|do|at|this|but|his|by|from|they|we|say|her|she|or|an|will|my|one", '|')
   for a in 'a':'z'
     for b in 'a':'z'
       for c in 'a':'z'
-        key = Uint8[a,b,c]
+        key = UInt8[a,b,c]
         r = check(x, key, commonwords)
         if r > 0
           return r

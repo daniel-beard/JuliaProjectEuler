@@ -8,7 +8,7 @@ NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-
 =#
 
 # This solution is not as clean as I'd like, but it is fast
-dict = [
+dict = Dict(
   1 => "one",
   2 => "two",
   3 => "three",
@@ -28,9 +28,9 @@ dict = [
   17 => "seventeen",
   18 => "eighteen",
   19 => "nineteen",
-]
+)
 
-tens_digits = [
+tens_digits = Dict( 
   2 => "twenty",
 	3 => "thirty",
 	4 => "forty",
@@ -39,7 +39,7 @@ tens_digits = [
 	7 => "seventy",
 	8 => "eighty",
 	9 => "ninety"
-  ]
+)
 
 function number_name(value, result, tens = false)
   value_digits = reverse(digits(value))
