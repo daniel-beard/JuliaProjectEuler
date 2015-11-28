@@ -9,7 +9,7 @@ Problems from ProjectEuler solved using Julia
 
 ...
 
-- [X] Problem 63
+- Problem 62-63
 - [X] Problem 67
 - [X] Problem 74
 - [X] Problem 79
