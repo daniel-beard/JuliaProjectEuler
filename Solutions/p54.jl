@@ -52,6 +52,9 @@ The file, poker.txt, contains one-thousand random hands dealt to two players. Ea
 
 How many hands does Player 1 win?
 =#
+using Base
+importall Base.Operators
+
 type PokerHand
   cards::Dict{Int, Int}
   suits::Dict{Int, Int}
@@ -66,7 +69,7 @@ type PokerHand
 end
 
 function handRank(hand::PokerHand)
-  if isFlush(hand) && filter(x->findfirst([10:14],x)!=0, collect(keys(hand.cards))) |> length == 5
+  if isFlush(hand) && filter(x->findfirst(collect(10:14),x)!=0, collect(keys(hand.cards))) |> length == 5
     return 10 # Royal Flush
   end
   if isFlush(hand) && isStraight(hand)
@@ -147,7 +150,7 @@ end
 function cardvalue(n)
   value = findfirst(["T", "J", "Q", "K", "A"], n) + 9
   if value >= 10 && value < 15 return value end
-  return int(n)
+  return parse(Int, n)
 end
 
 function suitvalue(n)
@@ -156,7 +159,7 @@ end
 
 function calc()
   count = 0
-  hands = readdlm(dirname(@__FILE__()) * "/../Resources/p54.txt", ' ', String)
+  hands = readdlm(dirname(@__FILE__()) * "/../Resources/p54.txt", ' ', AbstractString)
   for i in 1:1000
       suits, cards = Int[], Int[]
       for j in 1:10

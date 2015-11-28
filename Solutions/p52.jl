@@ -7,7 +7,7 @@ include("projecteulerutils.jl")
 function calc()
   i = 1
   while true
-    y = [digits(i * a) for a in [1:6]]
+    y = [digits(i * a) for a in 1:6]
     if filter(x->ispermutation(first(y),x), y) |> length == 6
       return i
     end

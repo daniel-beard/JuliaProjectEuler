@@ -15,7 +15,7 @@ function namescore(name, index)
 end
 
 function calc()
-  x = sort!(vec(readdlm(dirname(@__FILE__()) * "/../Resources/p22.txt", ',', String)))
+  x = sort!(vec(readdlm(dirname(@__FILE__()) * "/../Resources/p22.txt", ',', AbstractString)))
   total = 0
   for i in 1:length(x)
     total += namescore(x[i], i)

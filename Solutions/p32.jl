@@ -10,7 +10,7 @@ HINT: Some products can be obtained in more than one way so be sure to only incl
 include("projecteulerutils.jl")
 function calc()
   matches = Int64[]
-  for c in permutations([1:9])
+  for c in permutations(collect(1:9))
     c1,c2,c3 = c[1:2],c[3:5],c[6:9] # 2x3
     d1,d2,d3 = c[1:1],c[2:5], c[6:9] # 1x4
     if nd(c1) * nd(c2) == nd(c3)

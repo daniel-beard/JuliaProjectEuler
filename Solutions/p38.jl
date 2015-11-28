@@ -19,8 +19,8 @@ function canbepandigital(n)
   end
 
   if (length(stringresult)) == 9
-    result = int(stringresult)
-    if sort(digits(result)) == [1:9]
+    result = parse(Int, stringresult)
+    if sort(digits(result)) == collect(1:9)
       return (true,result)
     end
   end

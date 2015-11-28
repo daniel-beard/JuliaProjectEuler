@@ -20,7 +20,7 @@ NOTE: Wording was modified slightly on 24 April 2007 to emphasise the theoretica
 function islychrelnumber(n)
   for i in 1:50
     r = reverse(string(n))
-    l = BigInt(n) + BigInt(r)
+    l = n + parse(BigInt, r)
     if string(l) == reverse(string(l))
       return false
     end

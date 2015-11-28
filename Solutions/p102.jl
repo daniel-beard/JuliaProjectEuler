@@ -24,7 +24,7 @@ end
 function calc()
   x = readdlm(dirname(@__FILE__()) * "/../Resources/p102.txt", ',', Int64)
   count = 0
-  for i in [1:1000]
+  for i in collect(1:1000)
     count = pointInTriangle(0, 0, x[i,1], x[i, 2], x[i, 3], x[i, 4], x[i, 5], x[i, 6]) ? count + 1 : count
   end
   count

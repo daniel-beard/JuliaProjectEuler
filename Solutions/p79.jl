@@ -17,13 +17,13 @@ function matches(list, permutation)
 end
 
 function calc()
-  strings = sort!(vec(readdlm(dirname(@__FILE__()) * "/../Resources/p79.txt", ',', String)))
+  strings = sort!(vec(readdlm(dirname(@__FILE__()) * "/../Resources/p79.txt", ',', AbstractString)))
   # Create number set
   numberset = Int64[]
   list = Int64[]
   for string in strings
-    [push!(numberset, x) for x in digits(int(string))]
-    push!(list, int(string))
+    [push!(numberset, x) for x in digits(parse(Int, string))]
+    push!(list, parse(Int, string))
   end
   numberset = unique(numberset)
 

@@ -16,11 +16,11 @@ include("projecteulerutils.jl")
 
 function calc()
   sum = 0
-  for n in permutations([0:9])
+  for n in permutations(collect(0:9))
     if n[1] != 0
       isvalid = true
       y = [2,3,5,7,11,13,17]
-      for x in [2:8]
+      for x in collect(2:8)
         if nd(n[x:x+2]) % y[x-1] != 0
           isvalid = false
           break
