@@ -52,7 +52,6 @@ function emptycell(grid)
   for x in 1:9, y in 1:9
     if grid[y, x] == 0 return x, y end
   end
-  return -1, -1
 end
 
 function solve(grid)
