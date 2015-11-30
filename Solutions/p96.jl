@@ -42,21 +42,15 @@ function valuesincurrentcell(grid, x, y)
   result = Array{Int64, 1}()
   startx = round(Int64, (3 * ceil(x / 3)) - 2)
   starty = round(Int64, (3 * ceil(y / 3)) - 2)
-  for x in startx:startx+2
-    for y in starty:starty+2
-      if grid[y, x] != 0 push!(result, grid[y, x]) end
-    end
+  for x in startx:startx+2, y in starty:starty+2
+    if grid[y, x] != 0 push!(result, grid[y, x]) end
   end
   result
 end
 
 function emptycell(grid)
-  for x in 1:9
-    for y in 1:9
-      if grid[y, x] == 0
-        return x, y
-      end
-    end
+  for x in 1:9, y in 1:9
+    if grid[y, x] == 0 return x, y end
   end
   return -1, -1
 end
