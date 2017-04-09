@@ -14,7 +14,7 @@ function check(cypher, key, commonwords)
   for i in 1:length(cypher)
     push!(y, cypher[i] $ key[mod(i,length(key))+1])
   end
-  result = ascii(y)
+  result = ascii(convert(String, y))
   s = filter((x)->contains(result, x), commonwords)
   if length(s) > 20
     return sum(y)

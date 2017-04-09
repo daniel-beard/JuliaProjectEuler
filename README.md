@@ -20,3 +20,7 @@ Problems from ProjectEuler solved using Julia
 - [X] Problem 112
 - [X] Problem 145
 - [X] Problem 206
+
+##### Running 
+- `cd` into the Solutions directory
+- Run `julia make.jl` (this may take a while since it has to update packages as well).
