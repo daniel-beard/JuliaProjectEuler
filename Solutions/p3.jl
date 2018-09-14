@@ -5,5 +5,4 @@ What is the largest prime factor of the number 600851475143 ?
 =#
 
 using Primes
-time = @elapsed println(maximum(keys(factor(600851475143))))
-println("Took: $(time) seconds")
+@time println(maximum(keys(factor(600851475143))))

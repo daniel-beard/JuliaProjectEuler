@@ -4,8 +4,10 @@
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 =#
 
-function smallestevenlydivisiblebyallupto(maxdivisor)
+# Ugly but fast.
+function calc()
   current = 20
+  maxdivisor = 20
   while true
     maxforcurrent = 1
     for i in 1:maxdivisor
@@ -22,6 +24,4 @@ function smallestevenlydivisiblebyallupto(maxdivisor)
   end
   current
 end
-
-time = @elapsed println(smallestevenlydivisiblebyallupto(20))
-println("Took: $(time) seconds")
+@time println(calc())
