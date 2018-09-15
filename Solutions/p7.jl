@@ -6,15 +6,15 @@ What is the 10 001st prime number?
 
 using Primes
 function findnthprime(n)
-  x = Int[]
-  i = 2
-  while length(x) < n
+  i = 2; foundprimes = 0; lastprime = 0
+  while foundprimes < n
     if isprime(i)
-      push!(x, i)
+      foundprimes += 1
+      lastprime = i
     end
     i += 1
   end
-  last(x)
+  lastprime
 end
 
 @time println(findnthprime(10_001))

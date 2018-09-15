@@ -15,6 +15,9 @@ where |n| is the modulus/absolute value of n
 e.g. |11| = 11 and |−4| = 4
 Find the product of the coefficients, a and b, for the quadratic expression that produces the maximum number of primes for consecutive values of n, starting with n = 0.
 =#
+
+using Primes
+
 function longestprimerun(a,b)
   i = 0
   while isprime((i^2)+(a*i)+b)
@@ -27,13 +30,11 @@ function calc()
   (mina, maxa) = (-1000, 1000)
   (largesta, largestb) = (0,0)
   largest = 0
-  for a in mina:maxa
-    for b in mina:maxa
-      primerun = longestprimerun(a,b)
-      if primerun > largest
-        (largesta, largestb) = (a,b)
-        largest = primerun
-      end
+  for a in mina:maxa, b in mina:maxa
+    primerun = longestprimerun(a,b)
+    if primerun > largest
+      (largesta, largestb) = (a,b)
+      largest = primerun
     end
   end
   largesta * largestb

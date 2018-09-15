@@ -73,9 +73,12 @@ function number_name(value, result, tens = false)
   end
 end
 
-total = 0
-for i in 1:1000
-  total += length(number_name(i, ""))
+function calc()
+  total = 0
+  for i in 1:1000
+    total += length(number_name(i, ""))
+  end
+  total
 end
-@time println(total)
+@time println(calc())
 

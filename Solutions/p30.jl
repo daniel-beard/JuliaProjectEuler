@@ -17,8 +17,7 @@ That number has 9 digits, so the maximum sum would be 9*59049 = 531441, which do
 So any 9 digit number or greater can't ever reach a big enough sum.
 =#
 function sumofdigitpowers(a)
-  total = 0
-  i = 2
+  total, i = 0, 2
   while i < length(digits(i))*9^a
     current = sum(map((x)->x^a, digits(i)))
     if current == i
