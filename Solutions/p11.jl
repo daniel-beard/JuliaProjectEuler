@@ -26,6 +26,8 @@ The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
 What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 =#
 
+using DelimitedFiles
+
 function calc(x, i, j, adjacents)
   ar = Function[]
   push!(ar, (i,j)->i<size(x,1)-adjacents) # right
@@ -58,10 +60,8 @@ function product_adjacent_numbers()
   x = readdlm(dirname(@__FILE__()) * "/../Resources/p11.txt", ' ', Int64) # Load matrix from file
   adjacents = 4
   maxproduct = 1
-  for i in 1:size(x,1)
-    for j in 1:size(x,2)
-      maxproduct = max(calc(x, i, j, adjacents), maxproduct)
-    end
+  for i in 1:size(x,1), j in 1:size(x,2)
+    maxproduct = max(calc(x, i, j, adjacents), maxproduct)
   end
   maxproduct
 end

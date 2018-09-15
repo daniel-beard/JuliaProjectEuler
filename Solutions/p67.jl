@@ -13,19 +13,10 @@ Find the maximum total from top to bottom in triangle.txt (right click and 'Save
 NOTE: This is a much more difficult version of Problem 18. It is not possible to try every route to solve this problem, as there are 2^99 altogether! If you could check one trillion (1012) routes every second it would take over twenty billion years to check them all. There is an efficient algorithm to solve it. ;o)
 =#
 #a =
-function readfile(file)
-  f = open(file)
-  lines = readlines(f)
-  arr = Array[]
-  c(x) = push!(arr, [parse(Int64, s) for s = split(strip(x), ',')])
-  for line in lines
-    c(line)
-  end
-  arr
-end
 
 function calc()
-  arr = readfile(dirname(@__FILE__()) * "/../Resources/p67.txt")
+  lines = readlines(open(dirname(@__FILE__()) * "/../Resources/p67.txt"))
+  arr = map(x -> [parse(Int64, s) for s = split(strip(x), ',')], lines)
   result = Array[]
   push!(result, arr[length(arr)])
   for row in reverse(1:length(arr)-1)

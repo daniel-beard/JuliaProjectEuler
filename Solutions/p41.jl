@@ -4,6 +4,8 @@ We shall say that an n-digit number is pandigital if it makes use of all the dig
 What is the largest n-digit pandigital prime that exists?
 =#
 include("projecteulerutils.jl")
+using Combinatorics
+using Primes
 
 function calc()
   largestpandigitalprime = 1

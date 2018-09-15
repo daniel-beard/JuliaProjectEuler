@@ -7,6 +7,9 @@ By converting each letter in a word to a number corresponding to its alphabetica
 
 Using words.txt (right click and 'Save Link/Target As...'), a 16K text file containing nearly two-thousand common English words, how many are triangle words?
 =#
+
+using DelimitedFiles
+
 function calc()
   x = sort!(vec(readdlm(dirname(@__FILE__()) * "/../Resources/p42.txt", ',', AbstractString)))
   tn = [div(n*(n+1),2) for n in 1:100]

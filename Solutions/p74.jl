@@ -20,15 +20,16 @@ Starting with 69 produces a chain of five non-repeating terms, but the longest n
 How many chains, with a starting number below one million, contain exactly sixty non-repeating terms?
 =#
 function sumOfFactorialOfDigits(x)
-  total = sum(map(y -> factorial(y), digits(x)))
+  total = sum(map(factorial, digits(x)))
 end
 
+#TODO: Kinda slowish, could be sped up by memoizing each start number -> count of terms
 function lengthOfLoop(x)
   arr = Int64[]
   last = x
   while true
     current = sumOfFactorialOfDigits(last)
-    if findnext(arr, current, 1) != 0
+    if in(current, arr)
       return length(arr) + 1
     end
     push!(arr, current)

@@ -11,16 +11,12 @@ Find the product abc.
 # Kinda ugly brute force approach
 function findABC()
   max = 1000
-  for a in 1:max
-    for b in 1:max
-      for c in 1:max
-        if a >= b || b >= c || a + b + c != max
-          continue
-        end
-        if a^2 + b^2 == c^2
-          return a*b*c
-        end
-      end
+  for a in 1:max, b in 1:max, c in 1:max
+    if a >= b || b >= c || a + b + c != max
+      continue
+    end
+    if a^2 + b^2 == c^2
+      return a*b*c
     end
   end
 end

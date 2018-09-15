@@ -52,10 +52,11 @@ The file, poker.txt, contains one-thousand random hands dealt to two players. Ea
 
 How many hands does Player 1 win?
 =#
-using Base
-importall Base.Operators
 
-type PokerHand
+using DelimitedFiles
+import Base.<
+
+struct PokerHand
   cards::Dict{Int, Int}
   suits::Dict{Int, Int}
   function PokerHand(cardArray, suitArray)
@@ -69,7 +70,7 @@ type PokerHand
 end
 
 function handRank(hand::PokerHand)
-  if isFlush(hand) && filter(x->findfirst(collect(10:14),x)!=0, collect(keys(hand.cards))) |> length == 5
+  if isFlush(hand) && collect(values(hand.cards)) |> length == 5 && sort(collect(keys(hand.cards))) == sort(collect(10:14))
     return 10 # Royal Flush
   end
   if isFlush(hand) && isStraight(hand)
@@ -148,13 +149,13 @@ function <(x::PokerHand, y::PokerHand)
 end
 
 function cardvalue(n)
-  value = findfirst(["T", "J", "Q", "K", "A"], n) + 9
-  if value >= 10 && value < 15 return value end
-  return parse(Int, n)
+  values = ["2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"]
+  findfirst(x -> x == n, values)
 end
 
 function suitvalue(n)
-  return findfirst(["H", "C", "D", "S"], n)
+  values = ["H", "C", "D", "S"]
+  findfirst(x -> x == n, values)
 end
 
 function calc()

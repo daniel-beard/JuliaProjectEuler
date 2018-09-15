@@ -8,19 +8,17 @@ For which value of p ≤ 1000, is the number of solutions maximised?
 function calc()
   dict = Dict{Float64, Set}()
 
-  for i in 1:1000
-    for j in 1:1000
-      k = i^2+j^2
-      key = i + j + sqrt(k)
-      if sqrt(k) != floor(sqrt(k)) || key > 1000
-        continue
-      end
+  for i in 1:1000, j in 1:1000
+    k = i^2+j^2
+    key = i + j + sqrt(k)
+    if sqrt(k) != floor(sqrt(k)) || key > 1000
+      continue
+    end
 
-      if haskey(dict, key) == false
-        dict[key] = Set()
-      else
-        push!(dict[key], sort!([i, j, sqrt(k)]))
-      end
+    if haskey(dict, key) == false
+      dict[key] = Set()
+    else
+      push!(dict[key], sort!([i, j, sqrt(k)]))
     end
   end
 
@@ -31,6 +29,6 @@ function calc()
       maxcount, maxkey = count, key
     end
   end
-  maxkey
+  Int64(maxkey)
 end
 @time println(calc())
