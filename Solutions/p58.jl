@@ -13,6 +13,8 @@ It is interesting to note that the odd squares lie along the bottom right diagon
 
 If one complete new layer is wrapped around the spiral above, a square spiral with side length 9 will be formed. If this process is continued, what is the side length of the square spiral for which the ratio of primes along both diagonals first falls below 10%?
 =#
+using Primes
+
 function calc()
   start, step = 1,2
   iterations, currentsquaresize = 3,3
