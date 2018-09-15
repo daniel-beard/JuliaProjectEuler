@@ -7,6 +7,7 @@ Using base_exp.txt (right click and 'Save Link/Target As...'), a 22K text file c
 
 NOTE: The first two lines in the file represent the numbers in the example given above.
 =#
+using DelimitedFiles
 function calc()
   combined = readdlm(dirname(@__FILE__()) * "/../Resources/p99.txt", ',', Int64)
   bases = vec(combined[1:1000])

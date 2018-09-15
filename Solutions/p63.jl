@@ -5,12 +5,10 @@ How many n-digit positive integers exist which are also an nth power?
 =#
 function calc()
   count = 0
-  for n in 1:100
-    for p in 1:100
-      x = BigInt(n)^p
-      if length("$x") == p
-        count = count + 1
-      end
+  for n in 1:100, p in 1:100
+    x = BigInt(n)^p
+    if length("$x") == p
+      count += 1
     end
   end
   count

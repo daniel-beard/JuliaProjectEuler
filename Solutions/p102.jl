@@ -13,6 +13,8 @@ Using triangles.txt (right click and 'Save Link/Target As...'), a 27K text file 
 
 NOTE: The first two examples in the file represent the triangles in the example given above.
 =#
+using DelimitedFiles
+
 function pointInTriangle(pointX, pointY, v1X, v1Y, v2X, v2Y, v3X, v3Y) # Find point in triangle using barycentric coordinates
   A = (-v2Y * v3X + v1Y * (-v2X + v3X) + v1X * (v2Y - v3Y) + v2X * v3Y) / 2;
   sign = A < 0 ? -1 : 1;

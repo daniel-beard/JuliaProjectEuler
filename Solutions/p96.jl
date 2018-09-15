@@ -21,6 +21,7 @@ By solving all fifty puzzles find the sum of the 3-digit numbers found in the to
 for example, 483 is the 3-digit number found in the top left corner of the solution grid above.
 =#
 include("projecteulerutils.jl")
+using DelimitedFiles
 
 function valuesinrow(grid, row)
   a = Array{Int64, 1}()
@@ -55,7 +56,7 @@ function emptycell(grid)
 end
 
 function solve(grid)
-  if findfirst(grid, 0) == 0 # grid is full
+  if all(x -> x != 0, grid) # grid is full
     return true
   else
     x, y = emptycell(grid)
