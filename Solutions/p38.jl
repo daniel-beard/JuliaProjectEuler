@@ -31,10 +31,8 @@ function calc()
   maxpandigital = 0
   for i in 2:10_000
     (result, pandigital) = canbepandigital(i)
-    if result
-      if pandigital > maxpandigital
-        maxpandigital = pandigital
-      end
+    if result && pandigital > maxpandigital
+      maxpandigital = pandigital
     end
   end
   maxpandigital

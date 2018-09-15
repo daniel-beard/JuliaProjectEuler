@@ -21,11 +21,9 @@ end
 
 function calc()
   sum = 0
-  for n in 1:100
-    for r in reverse(1:n)
-      if combine(BigInt(n), BigInt(r)) > 1_000_000
-        sum = sum + 1
-      end
+  for n in 1:100, r in reverse(1:n)
+    if combine(BigInt(n), BigInt(r)) > 1_000_000
+      sum = sum + 1
     end
   end
   sum

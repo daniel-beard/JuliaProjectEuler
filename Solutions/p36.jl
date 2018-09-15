@@ -1,5 +1,5 @@
 #=
-The decimal number, 585 = 10010010012 (binary), is palindromic in both bases.
+The decimal number, 585 = 1001001001 (binary), is palindromic in both bases.
 
 Find the sum of all numbers, less than one million, which are palindromic in base 10 and base 2.
 
@@ -11,7 +11,7 @@ function isdecpalindrome(a)
 end
 
 function isbinarypalindrome(a)
-  bin(a) == reverse(bin(a))
+  digits(a, base=2) == reverse(digits(a, base=2))
 end
 
 function calc()

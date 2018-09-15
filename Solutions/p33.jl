@@ -21,7 +21,7 @@ function isdigitcancelling(a,b)
       push!(rb,db[1])
     end
   end
-  return (length(ra) == 1 && length(rb) == 1 && (a/b) == (ra[1]/rb[1])) ? true: false
+  return (length(ra) == 1 && length(rb) == 1 && (a/b) == (ra[1]/rb[1])) ? true : false
 end
 
 function calc()
@@ -39,6 +39,6 @@ function calc()
   d = gcd(f1,f2)
   f1 /= d
   f2 /= d
-  f2
+  Int64(f2)
 end
 @time println(calc())

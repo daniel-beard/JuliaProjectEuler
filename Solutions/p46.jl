@@ -12,6 +12,9 @@ It turns out that the conjecture was false.
 
 What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?
 =#
+
+using Primes
+
 function nextoddcomposite(x)
   n = x
   while true
@@ -28,11 +31,9 @@ function calc()
     composite = nextoddcomposite(composite)
     primesless = reverse(primes(composite))
     canbecalculated = false
-    for p in primesless
-      for i in 1:54
-        if p + 2*(i^2) == composite
-          canbecalculated = true
-        end
+    for p in primesless, i in 1:54
+      if p + 2*(i^2) == composite
+        canbecalculated = true
       end
     end
     if canbecalculated == false

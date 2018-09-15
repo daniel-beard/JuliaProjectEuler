@@ -6,6 +6,8 @@ There are no arithmetic sequences made up of three 1-, 2-, or 3-digit primes, ex
 What 12-digit number do you form by concatenating the three terms in this sequence?
 =#
 include("projecteulerutils.jl")
+using Primes
+
 function calc()
   b = c = 0
   for a in 1000:10000-3330-3330
@@ -14,14 +16,8 @@ function calc()
     end
     b = a+3330
     c = b+3330
-    if isprime(a)
-      if isprime(b)
-        if isprime(c)
-          if ispermutation(digits(a),digits(b)) && ispermutation(digits(b), digits(c))
-            return "$a$b$c"
-          end
-        end
-      end
+    if isprime(a) && isprime(b) && isprime(c) && ispermutation(digits(a),digits(b)) && ispermutation(digits(b), digits(c))
+      return "$a$b$c"
     end
   end
 end
